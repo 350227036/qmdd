@@ -1,0 +1,15 @@
+drop database qmdd_db;
+CREATE DATABASE IF NOT EXISTS qmdd_db DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
+show databases;
+use qmdd_db;
+ 
+drop table qmdd_words;
+create table qmdd_words(
+wid int not null primary key auto_increment,
+word varchar(10) not null,
+property varchar(10) not null,
+strokes int not null
+)charset=utf8;
+
+show tables;
+select * from qmdd_words;

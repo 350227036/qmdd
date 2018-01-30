@@ -1,0 +1,5 @@
+angular 1.5.3
+bootstrap 3.3.7
+php 5.4
+mysql 5.5.38
+开发环境 phpstudy

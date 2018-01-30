@@ -1,0 +1,4 @@
+mysql -u root -p
+然后source该sql.txt
+
+page3至26 都要核对
