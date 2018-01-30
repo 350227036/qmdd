@@ -1,0 +1,152 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<h2>录入</h2>
+			<form class="form-inline">
+			  <div class="form-group">
+			    <div class="input-group">
+			      <div class="input-group-addon">字</div>
+			      <input maxlength="1" ng-model="newWord.word" required="required" type="text" class="form-control" placeholder="字">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="input-group">
+				<div class="input-group-addon">五行属</div>
+					<select required="required" ng-model="newWord.property" class="form-control">
+					  <option value="金">金</option>
+					  <option value="木">木</option>
+					  <option value="水">水</option>
+					  <option value="火">火</option>
+					  <option value="土">土</option>
+					</select>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="input-group">
+				<div class="input-group-addon">笔画</div>
+					<select ng-model="newWord.strokes" class="form-control">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+					</select>
+			    </div>
+			  </div>
+			  <button ng-click="addBtn(newWord)" type="submit" class="btn btn-default xpull-right">插入</button>
+			</form>
+			<h2>查询</h2>
+			<form class="form-inline">
+			  <div class="form-group">
+			    <div class="input-group">
+			      <div class="input-group-addon">字</div>
+			      <input maxlength="1" type="search" class="form-control" ng-model="select.word" placeholder="字">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="input-group">
+				<div class="input-group-addon">五行属</div>
+			        <!--<input type="text" class="form-control" id="meta" placeholder="五行">-->
+					<select ng-model="select.property" class="form-control">
+					  <option value=""></option>
+					  <option value="金">金</option>
+					  <option value="木">木</option>
+					  <option value="水">水</option>
+					  <option value="火">火</option>
+					  <option value="土">土</option>
+					</select>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="input-group">
+				<div class="input-group-addon">笔画</div>
+					<select ng-model="select.strokes" class="form-control">
+						<option value="0"></option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+					</select>
+			    </div>
+			  </div>
+			  <button ng-click="selectBtn(select)" type="submit" class="btn btn-default xpull-right">查询</button>
+			  <button ng-click="reset()" type="reset" class="btn btn-default xpull-right">重置</button>
+			  <button class="btn btn-success pull-right">结果共有 <b class="badge">{{result.length}}</b>条</button>
+			</form>
+		</div>
+	</div>
+	<hr />
+	<div class="row">
+		<div class="col-xs-12">
+			<table class="text-center table table-condensed table-bordered table-hover table-responsive">
+				
+				<thead>
+					<tr>
+						<td>字</td>
+						<td>五行</td>
+						<td>笔画</td>
+						<td>操作</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="x in result">
+						<td>{{x.word}}</td>
+						<td>{{x.property}}</td>
+						<td>{{x.strokes}}</td>
+						<td><button class="btn btn-danger btn-xs">删除</button></td>
+					</tr>
+				</tbody>
+				<tfoot></tfoot>
+			</table>
+		</div>
+	</div>
+</div>

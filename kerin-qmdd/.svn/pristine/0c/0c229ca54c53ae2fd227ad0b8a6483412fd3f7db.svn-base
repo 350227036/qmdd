@@ -1,0 +1,51 @@
+var app = angular.module('myApp.name',[])
+.controller('nameCtrl',['$scope','$http',function($scope,$http){
+	$scope.select = {
+		lastName:'陈',
+		word1S:0,
+		word2S:0,
+		word1P:'木',
+		word2P:'水',
+//		strokes:0
+	}
+	$scope.result = [
+//		lastName:$scope.select.lastName,
+//		word1:'',
+//		word2:''
+	];
+//	查询功能功
+	$scope.selectBtn = function(select){
+		$scope.result = [];
+		console.log(select);
+		$http({
+		    method: 'POST',
+		    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+		    url: 'http://localhost/trunk/app/name/controller/getName.php',
+		    data:select
+		}).then(function successCallback(response) {
+//		        console.log(response.data.data);
+		        var arr1 = response.data.data[0];
+		        var arr2 = response.data.data[1];
+		        $scope.arr1 = arr1;
+		        $scope.arr2 = arr2;
+		        console.log(arr1);
+		        console.log(arr2);
+		        
+		        for(var i=0;i<arr1.length;i++){
+		        	for(var j=0;j<arr2.length;j++){
+						var name = {
+							lastName:select.lastName,
+							word1:arr1[i].word,
+							word1P:arr1[i].property,
+							word2:arr2[j].word,
+							word2P:arr2[j].property
+						}
+						$scope.result.push(name);
+		        	}
+		        }
+				console.log($scope.result);
+		    }, function errorCallback(response) {
+		        // 请求失败执行代码
+		});
+	}
+}]);

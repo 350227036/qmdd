@@ -1,0 +1,202 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<form class="form-inline">
+			  <div class="form-group">
+
+			    <div class="input-group">
+			      <div class="input-group-addon">姓氏</div>
+			      <input maxlength="2" ng-model="select.lastName" required="required" type="text" class="form-control" id="lastName" placeholder="姓氏">
+			    </div>
+			  </div>
+			  <div class="form-group hidden">
+			    <div class="input-group">
+				<div class="input-group-addon btn-warning">五行属</div>
+			        <!--<input type="text" class="form-control" id="meta" placeholder="五行">-->
+					<select class="form-control">
+					  <option>金</option>
+					  <option>木</option>
+					  <option>水</option>
+					  <option>火</option>
+					  <option>土</option>
+					</select>
+			    </div>
+			  </div>
+			  <div class="form-group hidden">
+			    <div class="input-group">
+				<div class="input-group-addon btn-warning">五行缺</div>
+			        <!--<input type="text" class="form-control" id="meta" placeholder="五行">-->
+					<select class="form-control">
+					  <option>金</option>
+					  <option>木</option>
+					  <option>水</option>
+					  <option>火</option>
+					  <option>土</option>
+					</select>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="input-group">
+				<div class="input-group-addon">名1笔画</div>
+					<select ng-model="select.word1S" class="form-control">
+						<option value="0"></option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+					</select>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="input-group">
+				<div class="input-group-addon">名1五行</div>
+					<select ng-model="select.word1P" class="form-control">
+						<option value=""></option>
+						<option value="金">金</option>
+						<option value="木">木</option>
+						<option value="水">水</option>
+						<option value="火">火</option>
+						<option value="土">土</option>
+					</select>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="input-group">
+				<div class="input-group-addon">名2笔画</div>
+					<select ng-model="select.word2S" class="form-control">
+						<option value="0"></option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+					</select>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="input-group">
+				<div class="input-group-addon">名2五行</div>
+					<select ng-model="select.word2P" class="form-control">
+						<option value=""></option>
+						<option value="金">金</option>
+						<option value="木">木</option>
+						<option value="水">水</option>
+						<option value="火">火</option>
+						<option value="土">土</option>
+					</select>
+			    </div>
+			  </div>
+
+			  <div class="form-group hidden">
+			    <div class="input-group">
+				<div class="input-group-addon btn-warning">总笔画</div>
+					<select class="form-control">
+						<option value="">1</option>
+						<option value="">2</option>
+						<option value="">3</option>
+						<option value="">4</option>
+						<option value="">5</option>
+					</select>
+			    </div>
+			  </div>
+			  <button ng-click="selectBtn(select)" type="submit" class="btn btn-default pull-right">查询</button>
+			</form>
+		</div>
+	</div>
+	<hr />
+	<div class="row">
+		<div class="col-xs-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">结果列表</div>
+				<div class="list-group">
+					<div ng-repeat="x in result" class="list-group-item ">
+						<div class="txt">
+							<strong>{{ x.lastName }} {{x.word1}} {{x.word2}}</strong><br />
+							<small>属</small>
+							<small> {{x.word1P}} </small>
+							<small> {{x.word2P}} </small>
+						</div>
+						<button class="btn btn-success">可用</button>
+					</div>
+				</div>					
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">数组1 <span class="badge">{{arr1.length}}</span></div>
+				<div class="list-group">
+
+					<div ng-repeat="x in arr1" class="list-group-item">
+						<div class="txt">
+							<strong>{{x.word}} {{x.property}} {{x.strokes}}</strong><br />
+						</div>
+						<button class="btn btn-danger">移除</button>
+					</div>
+				</div>					
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">数组2 <span class="badge">{{arr2.length}}</span></div>
+				<div class="list-group">
+
+					<div ng-repeat="x in arr2" class="list-group-item">
+						<div class="txt">
+							<strong>{{x.word}} {{x.property}} {{x.strokes}}</strong><br />
+						</div>
+						<button class="btn btn-danger">移除</button>
+					</div>
+				</div>					
+			</div>
+		</div>
+	</div>
+</div>

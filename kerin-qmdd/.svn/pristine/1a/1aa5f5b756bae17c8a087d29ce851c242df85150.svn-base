@@ -1,0 +1,209 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<form class="form-inline">
+			  <div class="form-group">
+
+			    <div class="input-group">
+			      <div class="input-group-addon">姓氏</div>
+			      <input type="text" class="form-control" id="lastName" placeholder="姓氏">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="input-group">
+				<div class="input-group-addon">五行缺</div>
+			        <!--<input type="text" class="form-control" id="meta" placeholder="五行">-->
+					<select class="form-control">
+					  <option>金</option>
+					  <option>木</option>
+					  <option>水</option>
+					  <option>火</option>
+					  <option>土</option>
+					</select>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="input-group">
+				<div class="input-group-addon">名1笔画</div>
+					<select class="form-control">
+						<option value="">1</option>
+						<option value="">2</option>
+						<option value="">3</option>
+						<option value="">4</option>
+						<option value="">5</option>
+						<option value="">6</option>
+						<option value="">7</option>
+						<option value="">8</option>
+						<option value="">9</option>
+						<option value="">10</option>
+						<option value="">11</option>
+						<option value="">12</option>
+						<option value="">13</option>
+						<option value="">14</option>
+						<option value="">15</option>
+						<option value="">16</option>
+						<option value="">17</option>
+						<option value="">18</option>
+					</select>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="input-group">
+				<div class="input-group-addon">名1五行</div>
+					<select class="form-control">
+						<option value="">金</option>
+						<option value="">木</option>
+						<option value="">水</option>
+						<option value="">火</option>
+						<option value="">土</option>
+					</select>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="input-group">
+				<div class="input-group-addon">名2字笔画</div>
+					<select class="form-control">
+						<option value="">1</option>
+						<option value="">2</option>
+						<option value="">3</option>
+						<option value="">4</option>
+						<option value="">5</option>
+						<option value="">6</option>
+						<option value="">7</option>
+						<option value="">8</option>
+						<option value="">9</option>
+						<option value="">10</option>
+						<option value="">11</option>
+						<option value="">12</option>
+						<option value="">13</option>
+						<option value="">14</option>
+						<option value="">15</option>
+						<option value="">16</option>
+						<option value="">17</option>
+						<option value="">18</option>
+					</select>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="input-group">
+				<div class="input-group-addon">名2五行</div>
+					<select class="form-control">
+						<option value="">金</option>
+						<option value="">木</option>
+						<option value="">水</option>
+						<option value="">火</option>
+						<option value="">土</option>
+					</select>
+			    </div>
+			  </div>
+			  <button type="submit" class="btn btn-default pull-right">查询</button>
+			</form>
+		</div>
+	</div>
+	<hr />
+	<div class="row">
+		<div class="col-xs-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">结果列表</div>
+				<div class="list-group">
+					<div class="list-group-item">
+						<div class="txt">
+							<strong>陈 皓 沐</strong><br />
+							<small>火</small>
+							<small>木</small>
+							<small>水</small>
+						</div>
+						<button class="btn btn-success">可用</button>
+					</div>
+					<div class="list-group-item">
+						<div class="txt">
+							<strong>陈 皓 沐</strong><br />
+							<small>火</small>
+							<small>木</small>
+							<small>水</small>
+						</div>
+						<button class="btn btn-success">可用</button>
+					</div>
+					<div class="list-group-item">
+						<div class="txt">
+							<strong>陈 皓 沐</strong><br />
+							<small>火</small>
+							<small>木</small>
+							<small>水</small>
+						</div>
+						<button class="btn btn-success">可用</button>
+					</div>
+					<div class="list-group-item">
+						<div class="txt">
+							<strong>陈 皓 沐</strong><br />
+							<small>火</small>
+							<small>木</small>
+							<small>水</small>
+						</div>
+						<button class="btn btn-success">可用</button>
+					</div>
+					<div class="list-group-item">
+						<div class="txt">
+							<strong>陈 皓 沐</strong><br />
+							<small>火</small>
+							<small>木</small>
+							<small>水</small>
+						</div>
+						<button class="btn btn-success">可用</button>
+					</div>
+				</div>					
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">可用列表</div>
+				<div class="list-group">
+					<div class="list-group-item">
+						<div class="txt">
+							<strong>陈 皓 沐</strong><br />
+							<small>火</small>
+							<small>木</small>
+							<small>水</small>
+						</div>
+						<button class="btn btn-danger">移除</button>
+					</div>
+					<div class="list-group-item">
+						<div class="txt">
+							<strong>陈 皓 沐</strong><br />
+							<small>火</small>
+							<small>木</small>
+							<small>水</small>
+						</div>
+						<button class="btn btn-danger">移除</button>
+					</div>
+					<div class="list-group-item">
+						<div class="txt">
+							<strong>陈 皓 沐</strong><br />
+							<small>火</small>
+							<small>木</small>
+							<small>水</small>
+						</div>
+						<button class="btn btn-danger">移除</button>
+					</div>
+				</div>					
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">最终选用</div>
+				<div class="list-group">
+					<div class="list-group-item">
+						<div class="txt">
+							<strong>陈 皓 沐</strong><br />
+							<small>火</small>
+							<small>木</small>
+							<small>水</small>
+						</div>
+
+						<button class="btn btn-danger">移除</button>
+					</div>
+				</div>					
+			</div>
+		</div>
+	</div>
+</div>

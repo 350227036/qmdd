@@ -1,0 +1,58 @@
+var app = angular.module('myApp.words',[])
+.controller('wordsCtrl',['$scope','$http',function($scope,$http){
+//	插入选项
+	$scope.newWord = {
+		word:'',
+		property:'',
+		strokes:0
+	}
+//	查询选项
+	$scope.select = {
+		word:'',
+		property:'',
+		strokes:0
+	}
+	$scope.result = [];
+	//重置
+	$scope.reset = function(){
+			$scope.select = {
+		word:'',
+		property:'',
+		strokes:0
+	}
+	}
+//	查询功能功
+	$scope.selectBtn = function(select){
+		$http({
+		    method: 'POST',
+		    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+		    url: 'http://localhost/trunk/app/words/controller/getWords.php',
+		    data:select
+		}).then(function successCallback(response) {
+		        console.log(response.data);
+		        $scope.result = response.data.data;
+		        console.log($scope.result.length);
+		    }, function errorCallback(response) {
+		        // 请求失败执行代码
+		});
+	}
+//	插入功能
+	$scope.addBtn = function(newWord){
+		console.log(newWord);
+		if(newWord.word !='' && newWord.property !='' && newWord.strokes !=0){
+
+			$http({
+			    method: 'POST',
+			    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+			    url: 'http://localhost/trunk/app/words/controller/addWords.php',
+			    data:newWord
+			}).then(function successCallback(response) {
+			        console.log(response.data);
+			    }, function errorCallback(response) {
+			        // 请求失败执行代码
+			});
+		}else{
+			alert('必须键入值');
+		}
+	}
+}]);

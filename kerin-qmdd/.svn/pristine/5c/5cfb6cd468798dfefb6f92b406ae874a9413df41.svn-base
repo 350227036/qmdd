@@ -1,0 +1,28 @@
+var app = angular.module('myApp.name',[])
+.controller('nameCtrl',['$scope','$http',function($scope,$http){
+	$scope.select = {
+		lastName:'陈',
+		word1S:'6',
+		word2S:'10',
+		word1P:'木',
+		word2P:'水',
+//		strokes:0
+	}
+	$scope.result = [];
+//	查询功能功
+	$scope.selectBtn = function(select){
+		console.log(select);
+		$http({
+		    method: 'POST',
+		    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+		    url: 'http://localhost/trunk/app/name/controller/getName.php',
+		    data:select
+		}).then(function successCallback(response) {
+//		        console.log(response.data);
+		        $scope.result = response.data.data;
+//		        console.log($scope.result.length);
+		    }, function errorCallback(response) {
+		        // 请求失败执行代码
+		});
+	}
+}]);

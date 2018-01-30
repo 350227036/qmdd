@@ -1,0 +1,32 @@
+var app = angular.module('myApp.words',[])
+.controller('wordsCtrl',['$scope','$http',function($scope,$http){
+	$scope.select = {
+		word:'',
+		property:'',
+		strokes:0
+	}
+	$scope.result = [];
+	//重置
+	$scope.reset = function(){
+			$scope.select = {
+		word:'',
+		property:'',
+		strokes:0
+	}
+	}
+//	查询功能功
+	$scope.selectBtn = function(select){
+		$http({
+		    method: 'POST',
+		    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+		    url: 'http://localhost/trunk/app/words/controller/getWords.php',
+		    data:select
+		}).then(function successCallback(response) {
+		        console.log(response.data);
+		        $scope.result = response.data.data;
+		        console.log($scope.result.length);
+		    }, function errorCallback(response) {
+		        // 请求失败执行代码
+		});
+	}
+}]);

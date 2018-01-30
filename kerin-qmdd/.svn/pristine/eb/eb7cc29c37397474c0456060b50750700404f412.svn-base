@@ -1,0 +1,12 @@
+var app = angular.module('myApp.words',[])
+.controller('wordsCtrl',['$scope','words',function($scope,words){
+	$scope.select = {
+		word:'',
+		property:'',
+		strokes:0
+	}
+	$scope.selectBtn = function(select){
+		
+		words.getWords(select);
+	}
+}]);

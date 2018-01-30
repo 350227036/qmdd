@@ -1,0 +1,5 @@
+var app = angular.module('myApp.words',[])
+.controller('wordsCtrl',['$scope','words',function($scope,words){
+	console.log(words.getWord());
+	$scope.isActive = 'true';
+}]);

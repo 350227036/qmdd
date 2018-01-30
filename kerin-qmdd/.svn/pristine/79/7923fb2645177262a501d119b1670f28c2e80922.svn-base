@@ -1,0 +1,20 @@
+var app = angular.module('myApp.getWords',[])
+.factory('words',function($http){
+	return {
+		getWords:function(select){
+			console.log(select);
+			$http({
+			    method: 'POST',
+			    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+			    url: 'http://localhost/trunk/app/words/controller/getWords.php',
+			    data:select
+			}).then(function successCallback(response) {
+			        console.log(response.data.data);
+			        return response.data.data;
+			    }, function errorCallback(response) {
+			        // 请求失败执行代码
+			});
+			
+		}
+	}
+});

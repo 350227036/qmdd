@@ -1,0 +1,20 @@
+var app = angular.module('myApp.tabs',[])
+.controller('tabsCtrl',['$scope',function($scope){
+	$scope.lis = [
+		{
+			'text':'起名字',
+			'isActive':true
+		},
+		{
+			'text':'录入字典',
+			'isActive':false
+		},
+	];
+	$scope.nav = function(x){
+		for(var i=0;i<$scope.lis.length;i++){
+			$scope.lis[i].isActive = false;
+		}
+		var index = $scope.lis.indexOf(x);
+		$scope.lis[index].isActive = true;
+	}
+}]);

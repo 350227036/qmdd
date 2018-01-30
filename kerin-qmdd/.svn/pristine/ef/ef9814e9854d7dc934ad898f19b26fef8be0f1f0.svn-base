@@ -1,0 +1,4 @@
+var app = angular.module('myApp.name',[])
+.controller('nameCtrl',['$scope',function($scope){
+	$scope.isActive = 'true';
+}]);
